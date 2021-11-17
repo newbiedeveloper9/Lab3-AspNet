@@ -15,12 +15,12 @@ namespace Lab3.Pages
         [BindProperty(Name = "imie")]
         public string Name { get; set; }
 
-        public async Task<IActionResult> OnGetAsync()
+        public IActionResult OnGetAsync()
         {
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(
+        public IActionResult OnPost(
             [Required][Display(Name = "Iloœæ powtórzeñ")][Range(1, 5)] int timesRepeat,
             [Required][Display(Name = "Imiê")] string name)
         {
