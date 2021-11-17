@@ -1,0 +1,32 @@
+﻿@page
+@model Lab3.Pages.TestPageModel
+@{
+    <form method="post" asp-page="TestResultPageModel">
+        <div asp-validation-summary="ModelOnly"></div>
+
+        <div>
+            <label asp-for="Name"></label>:
+            <input asp-for="Name" /><br/>
+            <span asp-validation-for="Name"></span>
+        </div>
+
+        <div>
+            <label asp-for="TimesRepeat"></label>:
+            <input asp-for="TimesRepeat"/><br/>
+            <span asp-validation-for="TimesRepeat"></span>
+        </div>
+        
+        <input type="submit" value="Click"/>
+    </form>
+
+    <br/>
+
+    <div>
+    @{
+        for (var i = 1; i <= Model.TimesRepeat; i++)
+        {
+            <p>@Model.Name</p>
+        }
+    }
+    </div>
+}
